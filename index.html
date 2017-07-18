@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clock / Alarm</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="canvas">
+    <canvas width="400" height="400" class="ui-canvas || js-canvas"></canvas>
+    <br>
+    <br>
+    <form action="" class="form" method="post">
+      <div class="form-group">
+        <label for="hours">
+          Hora:
+        </label>
+        <input type="text" name="hour" placeholder="Ex.: 10" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="minutes">
+          Minutos:
+        </label>
+        <input type="text" name="minute" placeholder="Ex.: 10" class="form-control">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">
+          Cadastrar despertador
+        </button>
+      </div>
+    </form>
+    <br>
+    <br>
+    <table class="table table-bordered table-striped ui-table">
+      <thead>
+        <tr>
+          <td align="center" colspan="2">
+            <strong>Despertadores cadastrados</strong>
+          </td>
+        </tr>
+      </thead>
+      <tbody class="alarm-list"></tbody>
+    </table>
+  </div>
+
+  <script type="text/javascript" src="assets/js/bundle.js"></script>
+</body>
+</html>
