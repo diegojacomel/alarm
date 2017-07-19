@@ -1,13 +1,15 @@
 var canvas = document.querySelector('.js-canvas')
 var context = canvas.getContext('2d')
 var radius = canvas.height / 2
+
 context.translate(radius, radius)
 radius = radius * 0.9
+
 setInterval(drawClock, 1000)
 
 var alarms = []
 
-alarms = localStorage.getItem('alarms')
+alarms = window.localStorage.getItem('alarms')
 alarms = JSON.parse(alarms)
 
 function drawClock () {
@@ -17,7 +19,7 @@ function drawClock () {
 }
 
 function drawFace (context, radius) {
-  var grad;
+  var grad
 
   context.beginPath()
   context.arc(0, 0, radius, 0, 2 * Math.PI)
@@ -84,7 +86,7 @@ function checkAlarm (hour, minute, second) {
     var alarmHour = parseInt(alarm.hour)
     var alarmMinute = parseInt(alarm.minute)
     if (hour === alarmHour && minute === alarmMinute && second === 0) {
-      alert('Despertador...' + alarmHour + ':' + alarmMinute + ':00')
+      window.alert('Despertador...' + alarmHour + ':' + alarmMinute + ':00')
     }
   })
 }
@@ -125,7 +127,7 @@ function removeAlarm () {
   removeAlarm.forEach(buttonRemove => {
     buttonRemove.addEventListener('click', function () {
       alarms.splice(this.id, 1)
-      localStorage.setItem('alarms', JSON.stringify(alarms))
+      window.localStorage.setItem('alarms', JSON.stringify(alarms))
       renderAlarm()
     })
   })
@@ -141,7 +143,7 @@ form.addEventListener('submit', function (e) {
 
   alarms.push({hour, minute, second})
 
-  localStorage.setItem('alarms', JSON.stringify(alarms))
+  window.localStorage.setItem('alarms', JSON.stringify(alarms))
 
   renderAlarm()
 })

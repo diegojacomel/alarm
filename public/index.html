@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Clock / Alarm</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
 
+<div class="container">
   <div class="canvas">
     <canvas width="400" height="400" class="ui-canvas || js-canvas"></canvas>
     <br>
@@ -46,7 +47,9 @@
       <tbody class="alarm-list"></tbody>
     </table>
   </div>
+</div>
 
-  <script type="text/javascript" src="assets/js/bundle.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/javascript" src="js/bundle.min.js"></script>
 </body>
 </html>
