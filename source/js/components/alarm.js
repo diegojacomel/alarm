@@ -9,7 +9,7 @@ setInterval(drawClock, 1000)
 
 var alarms = []
 
-alarms = window.localStorage.getItem('alarms')
+alarms = window.localStorage.getItem('alarms') || '[]'
 alarms = JSON.parse(alarms)
 
 function drawClock () {
